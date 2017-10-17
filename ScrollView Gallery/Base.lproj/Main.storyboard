@@ -25,6 +25,9 @@
                                     <outletCollection property="gestureRecognizers" destination="Uey-5H-gB7" appends="YES" id="4x5-Qj-vHI"/>
                                 </connections>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fEG-JK-cKe">
+                                <rect key="frame" x="187" y="683" width="39" height="37"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -32,6 +35,8 @@
                             <constraint firstAttribute="bottom" secondItem="Ire-n6-D92" secondAttribute="bottom" id="9R1-Gu-bi2"/>
                             <constraint firstItem="Ire-n6-D92" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Dda-cg-Ju3"/>
                             <constraint firstAttribute="trailing" secondItem="Ire-n6-D92" secondAttribute="trailing" id="JuN-mA-R7p"/>
+                            <constraint firstItem="fEG-JK-cKe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aJI-Ii-Zyh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fEG-JK-cKe" secondAttribute="bottom" constant="16" id="lyQ-cV-PIN"/>
                             <constraint firstItem="Ire-n6-D92" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vBJ-ub-2pH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -39,6 +44,7 @@
                     <navigationItem key="navigationItem" id="BLY-nv-UP6"/>
                     <connections>
                         <outlet property="galleryScrollView" destination="Ire-n6-D92" id="gii-65-Uf0"/>
+                        <outlet property="pageControl" destination="fEG-JK-cKe" id="UxM-PM-g2F"/>
                         <outlet property="tapGestureRecognizer" destination="Uey-5H-gB7" id="21O-E0-hqb"/>
                         <segue destination="rte-ZA-9HH" kind="show" identifier="detailSegue" id="fit-2R-2D9"/>
                     </connections>

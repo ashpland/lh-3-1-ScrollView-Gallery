@@ -13,8 +13,9 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *galleryScrollView;
 @property (strong, nonatomic) NSArray<UIImageView *> *photoArray;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
-@property (strong, nonatomic) UIImage *currentPhoto;
+@property (strong, nonatomic, readonly) UIImage *currentPhoto;
 - (IBAction)imageWasTapped:(UITapGestureRecognizer *)sender;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 
 
@@ -50,22 +51,20 @@
         imageView.clipsToBounds = true;
 
         imageView.contentMode = UIViewContentModeScaleAspectFit;
-//        imageView.contentMode = UIViewContentModeScaleAspectFill;
 
     }
     
-    self.currentPhoto = [self.photoArray objectAtIndex:0].image;
-    
+    self.pageControl.numberOfPages = self.photoArray.count;
+        
     self.galleryScrollView.contentSize = CGSizeMake(self.view.frame.size.width * self.photoArray.count, self.view.frame.size.height);
 
 
 }
 
 
-
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    self.currentPhoto = [self.photoArray objectAtIndex:(scrollView.contentOffset.x / self.view.frame.size.width)].image;
+    self.pageControl.currentPage = scrollView.contentOffset.x / self.view.frame.size.width;
 }
 
 
@@ -73,6 +72,11 @@
     
     [self performSegueWithIdentifier:@"detailSegue" sender:sender];
     
+}
+
+-(UIImage *)currentPhoto
+{
+    return [self.photoArray objectAtIndex:(self.galleryScrollView.contentOffset.x / self.view.frame.size.width)].image;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
