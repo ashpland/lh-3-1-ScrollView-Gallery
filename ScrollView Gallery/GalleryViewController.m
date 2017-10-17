@@ -7,10 +7,19 @@
 //
 
 #import "GalleryViewController.h"
+#import "ImageDetailViewController.h"
 
 @interface GalleryViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *galleryScrollView;
 @property (strong, nonatomic) NSArray<UIImageView *> *photoArray;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
+@property (strong, nonatomic) UIImage *currentPhoto;
+- (IBAction)imageWasTapped:(UITapGestureRecognizer *)sender;
+
+
+
+
+
 
 @end
 
@@ -44,7 +53,8 @@
 //        imageView.contentMode = UIViewContentModeScaleAspectFill;
 
     }
-
+    
+    self.currentPhoto = [self.photoArray objectAtIndex:0].image;
     
     self.galleryScrollView.contentSize = CGSizeMake(self.view.frame.size.width * self.photoArray.count, self.view.frame.size.height);
 
@@ -52,9 +62,25 @@
 }
 
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    NSLog(@"Scrolling: %f", scrollView.contentOffset.x);
+    self.currentPhoto = [self.photoArray objectAtIndex:(scrollView.contentOffset.x / self.view.frame.size.width)].image;
+}
+
+
+- (IBAction)imageWasTapped:(UITapGestureRecognizer *)sender {
+    
+    [self performSegueWithIdentifier:@"detailSegue" sender:sender];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"detailSegue"]) {
+        ImageDetailViewController *imageDetail = [segue destinationViewController];
+        imageDetail.detailedImage = self.currentPhoto;
+    }
 }
 
 

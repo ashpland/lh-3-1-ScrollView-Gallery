@@ -10,4 +10,6 @@
 
 @interface ImageDetailViewController : UIViewController <UIScrollViewDelegate>
 
+@property (strong, nonatomic) UIImage *detailedImage;
+
 @end

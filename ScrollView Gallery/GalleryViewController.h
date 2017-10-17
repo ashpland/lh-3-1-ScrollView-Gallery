@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GalleryViewController : UIViewController <UIScrollViewDelegate>
+@interface GalleryViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
 @end
