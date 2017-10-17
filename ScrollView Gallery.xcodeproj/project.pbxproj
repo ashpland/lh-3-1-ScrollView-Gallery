@@ -13,6 +13,7 @@
 		497B3C741F9660B20012EC41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497B3C721F9660B20012EC41 /* LaunchScreen.storyboard */; };
 		497B3C771F9660B20012EC41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B3C761F9660B20012EC41 /* main.m */; };
 		497B3C821F9664650012EC41 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B3C811F9664650012EC41 /* GalleryViewController.m */; };
+		497B3C861F9681410012EC41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 497B3C831F9665580012EC41 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				497B3C741F9660B20012EC41 /* LaunchScreen.storyboard in Resources */,
+				497B3C861F9681410012EC41 /* Images.xcassets in Resources */,
 				497B3C711F9660B20012EC41 /* Assets.xcassets in Resources */,
 				497B3C6F1F9660B20012EC41 /* Main.storyboard in Resources */,
 			);

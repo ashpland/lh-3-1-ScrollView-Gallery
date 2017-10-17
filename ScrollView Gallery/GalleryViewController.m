@@ -27,20 +27,34 @@
     
     for (UIImageView *imageView in self.photoArray) {
         imageView.translatesAutoresizingMaskIntoConstraints = NO;
-//        [self.galleryScrollView addSubview: imageView];
-        [self.view addSubview: imageView];
+        [self.galleryScrollView addSubview: imageView];
 
+        
         [imageView.widthAnchor constraintEqualToAnchor:self.view.widthAnchor].active = YES;
         [imageView.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
         [imageView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
 
-        NSInteger leftOffSet = [self.photoArray indexOfObject:imageView] * self.view.frame.size.width / 3;
+        NSInteger leftOffSet = [self.photoArray indexOfObject:imageView] * self.view.frame.size.width;
 
-        [imageView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:leftOffSet].active = YES;
+        [imageView.leftAnchor constraintEqualToAnchor:self.galleryScrollView.leftAnchor constant:leftOffSet].active = YES;
+        
+        imageView.clipsToBounds = true;
+
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+
     }
 
+    
+    self.galleryScrollView.contentSize = CGSizeMake(self.view.frame.size.width * self.photoArray.count, self.view.frame.size.height);
 
 
 }
+
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"Scrolling: %f", scrollView.contentOffset.x);
+}
+
 
 @end
