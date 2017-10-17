@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		494A40491F9693C7005754D7 /* ImageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 494A40481F9693C7005754D7 /* ImageDetailViewController.m */; };
 		497B3C691F9660B20012EC41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B3C681F9660B20012EC41 /* AppDelegate.m */; };
 		497B3C6F1F9660B20012EC41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497B3C6D1F9660B20012EC41 /* Main.storyboard */; };
 		497B3C711F9660B20012EC41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 497B3C701F9660B20012EC41 /* Assets.xcassets */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		494A40471F9693C7005754D7 /* ImageDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDetailViewController.h; sourceTree = "<group>"; };
+		494A40481F9693C7005754D7 /* ImageDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDetailViewController.m; sourceTree = "<group>"; };
 		497B3C641F9660B20012EC41 /* ScrollView Gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScrollView Gallery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		497B3C671F9660B20012EC41 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		497B3C681F9660B20012EC41 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -65,6 +68,8 @@
 				497B3C801F9664650012EC41 /* GalleryViewController.h */,
 				497B3C811F9664650012EC41 /* GalleryViewController.m */,
 				497B3C6D1F9660B20012EC41 /* Main.storyboard */,
+				494A40471F9693C7005754D7 /* ImageDetailViewController.h */,
+				494A40481F9693C7005754D7 /* ImageDetailViewController.m */,
 				497B3C701F9660B20012EC41 /* Assets.xcassets */,
 				497B3C831F9665580012EC41 /* Images.xcassets */,
 				497B3C721F9660B20012EC41 /* LaunchScreen.storyboard */,
@@ -149,6 +154,7 @@
 				497B3C771F9660B20012EC41 /* main.m in Sources */,
 				497B3C691F9660B20012EC41 /* AppDelegate.m in Sources */,
 				497B3C821F9664650012EC41 /* GalleryViewController.m in Sources */,
+				494A40491F9693C7005754D7 /* ImageDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

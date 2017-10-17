@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rte-ZA-9HH">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,5 +40,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Image Detail View Controller-->
+        <scene sceneID="HMH-QT-zbN">
+            <objects>
+                <viewController id="rte-ZA-9HH" customClass="ImageDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3mQ-AP-fI4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.5" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="a4i-Wb-bSH">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lighthouse-in-Field" translatesAutoresizingMaskIntoConstraints="NO" id="6pW-Qm-Tnl">
+                                        <rect key="frame" x="0.0" y="0.0" width="960" height="736"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="6pW-Qm-Tnl" secondAttribute="bottom" id="8MF-17-TJE"/>
+                                    <constraint firstItem="6pW-Qm-Tnl" firstAttribute="top" secondItem="a4i-Wb-bSH" secondAttribute="top" id="FrC-Dg-y40"/>
+                                    <constraint firstItem="6pW-Qm-Tnl" firstAttribute="leading" secondItem="a4i-Wb-bSH" secondAttribute="leading" id="cqb-uC-6hc"/>
+                                    <constraint firstAttribute="trailing" secondItem="6pW-Qm-Tnl" secondAttribute="trailing" id="ji6-m8-KZe"/>
+                                    <constraint firstItem="6pW-Qm-Tnl" firstAttribute="centerY" secondItem="a4i-Wb-bSH" secondAttribute="centerY" id="mxR-yr-DUV"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="rte-ZA-9HH" id="TD3-kn-m4G"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="a4i-Wb-bSH" secondAttribute="bottom" id="ZnX-aj-Jkw"/>
+                            <constraint firstItem="a4i-Wb-bSH" firstAttribute="top" secondItem="3mQ-AP-fI4" secondAttribute="top" id="enG-Yb-hRv"/>
+                            <constraint firstItem="a4i-Wb-bSH" firstAttribute="leading" secondItem="3mQ-AP-fI4" secondAttribute="leading" id="uAR-uc-9YH"/>
+                            <constraint firstAttribute="trailing" secondItem="a4i-Wb-bSH" secondAttribute="trailing" id="xrb-0n-tgy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DmI-5Q-DqY"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailView" destination="a4i-Wb-bSH" id="acU-CQ-07L"/>
+                        <outlet property="imageView" destination="6pW-Qm-Tnl" id="bjI-fE-qd6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zy9-r8-zp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="822" y="34"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Lighthouse-in-Field" width="960" height="540"/>
+    </resources>
 </document>

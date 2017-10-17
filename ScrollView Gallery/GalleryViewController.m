@@ -41,6 +41,7 @@
         imageView.clipsToBounds = true;
 
         imageView.contentMode = UIViewContentModeScaleAspectFit;
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
 
     }
 

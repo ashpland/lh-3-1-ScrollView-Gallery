@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ImageDetailViewController : UIViewController
+@interface ImageDetailViewController : UIViewController <UIScrollViewDelegate>
 
 @end
