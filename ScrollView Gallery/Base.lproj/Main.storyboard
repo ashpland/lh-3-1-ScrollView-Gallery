@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rte-ZA-9HH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ggc-PA-8ph">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,6 +23,14 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="G48-Ie-NSW"/>
                                 </connections>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQi-iX-Up2">
+                                <rect key="frame" x="184" y="353" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="rte-ZA-9HH" kind="show" id="xKI-Ww-qKF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -33,12 +41,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="BLY-nv-UP6"/>
                     <connections>
                         <outlet property="galleryScrollView" destination="Ire-n6-D92" id="gii-65-Uf0"/>
+                        <segue destination="rte-ZA-9HH" kind="show" id="fit-2R-2D9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="99" y="33"/>
         </scene>
         <!--Image Detail View Controller-->
         <scene sceneID="HMH-QT-zbN">
@@ -48,19 +59,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.5" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="a4i-Wb-bSH">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.25" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="a4i-Wb-bSH">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lighthouse-in-Field" translatesAutoresizingMaskIntoConstraints="NO" id="6pW-Qm-Tnl">
-                                        <rect key="frame" x="0.0" y="0.0" width="960" height="736"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="960" height="720"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="6pW-Qm-Tnl" secondAttribute="bottom" id="8MF-17-TJE"/>
-                                    <constraint firstItem="6pW-Qm-Tnl" firstAttribute="top" secondItem="a4i-Wb-bSH" secondAttribute="top" id="FrC-Dg-y40"/>
+                                    <constraint firstItem="6pW-Qm-Tnl" firstAttribute="top" secondItem="a4i-Wb-bSH" secondAttribute="top" id="9Df-tK-rqO"/>
                                     <constraint firstItem="6pW-Qm-Tnl" firstAttribute="leading" secondItem="a4i-Wb-bSH" secondAttribute="leading" id="cqb-uC-6hc"/>
                                     <constraint firstAttribute="trailing" secondItem="6pW-Qm-Tnl" secondAttribute="trailing" id="ji6-m8-KZe"/>
-                                    <constraint firstItem="6pW-Qm-Tnl" firstAttribute="centerY" secondItem="a4i-Wb-bSH" secondAttribute="centerY" id="mxR-yr-DUV"/>
+                                    <constraint firstItem="6pW-Qm-Tnl" firstAttribute="centerY" secondItem="a4i-Wb-bSH" secondAttribute="centerY" constant="-8" id="mxR-yr-DUV"/>
+                                    <constraint firstAttribute="bottom" secondItem="6pW-Qm-Tnl" secondAttribute="bottom" id="p9d-z8-Yhb"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="rte-ZA-9HH" id="TD3-kn-m4G"/>
@@ -85,8 +96,27 @@
             </objects>
             <point key="canvasLocation" x="822" y="34"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wC1-J8-RyD">
+            <objects>
+                <navigationController id="ggc-PA-8ph" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="uQp-tu-aYq">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gGZ-I2-bs5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qvC-XF-PuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-855" y="34"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Lighthouse-in-Field" width="960" height="540"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="fit-2R-2D9"/>
+    </inferredMetricsTieBreakers>
 </document>
