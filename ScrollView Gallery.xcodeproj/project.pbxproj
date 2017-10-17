@@ -8,24 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		497B3C691F9660B20012EC41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B3C681F9660B20012EC41 /* AppDelegate.m */; };
-		497B3C6C1F9660B20012EC41 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B3C6B1F9660B20012EC41 /* ViewController.m */; };
 		497B3C6F1F9660B20012EC41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497B3C6D1F9660B20012EC41 /* Main.storyboard */; };
 		497B3C711F9660B20012EC41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 497B3C701F9660B20012EC41 /* Assets.xcassets */; };
 		497B3C741F9660B20012EC41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497B3C721F9660B20012EC41 /* LaunchScreen.storyboard */; };
 		497B3C771F9660B20012EC41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B3C761F9660B20012EC41 /* main.m */; };
+		497B3C821F9664650012EC41 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 497B3C811F9664650012EC41 /* GalleryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		497B3C641F9660B20012EC41 /* ScrollView Gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScrollView Gallery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		497B3C671F9660B20012EC41 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		497B3C681F9660B20012EC41 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		497B3C6A1F9660B20012EC41 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		497B3C6B1F9660B20012EC41 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		497B3C6E1F9660B20012EC41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		497B3C701F9660B20012EC41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		497B3C731F9660B20012EC41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		497B3C751F9660B20012EC41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		497B3C761F9660B20012EC41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		497B3C801F9664650012EC41 /* GalleryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GalleryViewController.h; sourceTree = "<group>"; };
+		497B3C811F9664650012EC41 /* GalleryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GalleryViewController.m; sourceTree = "<group>"; };
+		497B3C831F9665580012EC41 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +61,11 @@
 			children = (
 				497B3C671F9660B20012EC41 /* AppDelegate.h */,
 				497B3C681F9660B20012EC41 /* AppDelegate.m */,
-				497B3C6A1F9660B20012EC41 /* ViewController.h */,
-				497B3C6B1F9660B20012EC41 /* ViewController.m */,
+				497B3C801F9664650012EC41 /* GalleryViewController.h */,
+				497B3C811F9664650012EC41 /* GalleryViewController.m */,
 				497B3C6D1F9660B20012EC41 /* Main.storyboard */,
 				497B3C701F9660B20012EC41 /* Assets.xcassets */,
+				497B3C831F9665580012EC41 /* Images.xcassets */,
 				497B3C721F9660B20012EC41 /* LaunchScreen.storyboard */,
 				497B3C751F9660B20012EC41 /* Info.plist */,
 				497B3C761F9660B20012EC41 /* main.m */,
@@ -142,9 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				497B3C6C1F9660B20012EC41 /* ViewController.m in Sources */,
 				497B3C771F9660B20012EC41 /* main.m in Sources */,
 				497B3C691F9660B20012EC41 /* AppDelegate.m in Sources */,
+				497B3C821F9664650012EC41 /* GalleryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +286,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hearthedge.ScrollView-Gallery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -298,7 +300,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hearthedge.ScrollView-Gallery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GalleryViewController.h
 //  ScrollView Gallery
 //
 //  Created by Andrew on 2017-10-17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface GalleryViewController : UIViewController <UIScrollViewDelegate>
 
 @end
-
