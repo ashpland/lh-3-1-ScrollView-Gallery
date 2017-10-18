@@ -16,6 +16,7 @@
 @property (strong, nonatomic, readonly) UIImage *currentPhoto;
 - (IBAction)imageWasTapped:(UITapGestureRecognizer *)sender;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (strong, nonatomic) UIStackView *imageHolder;
 
 
 
@@ -35,29 +36,37 @@
                         [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Lighthouse-zoomed"]]
                         ];
     
+    
+    self.imageHolder = [UIStackView new];
+    self.imageHolder.translatesAutoresizingMaskIntoConstraints = NO;
+
+    self.imageHolder.axis = UILayoutConstraintAxisHorizontal;
+    self.imageHolder.distribution = UIStackViewDistributionEqualSpacing;
+    self.imageHolder.alignment = UIStackViewAlignmentFill;
+    
+    [self.galleryScrollView addSubview: self.imageHolder];
+    
+    
+    [self.imageHolder.leadingAnchor constraintEqualToAnchor:self.galleryScrollView.leadingAnchor].active = YES;
+    [self.imageHolder.trailingAnchor constraintEqualToAnchor:self.galleryScrollView.trailingAnchor].active = YES;
+    
+    [self.imageHolder.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
+    [self.imageHolder.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
+    [self.imageHolder.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor].active = YES;
+    
+    
+    
     for (UIImageView *imageView in self.photoArray) {
         imageView.translatesAutoresizingMaskIntoConstraints = NO;
-        [self.galleryScrollView addSubview: imageView];
-
-        
+        [self.imageHolder addArrangedSubview: imageView];
         [imageView.widthAnchor constraintEqualToAnchor:self.view.widthAnchor].active = YES;
-        [imageView.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
-        [imageView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
-
-        NSInteger leftOffSet = [self.photoArray indexOfObject:imageView] * self.view.frame.size.width;
-
-        [imageView.leftAnchor constraintEqualToAnchor:self.galleryScrollView.leftAnchor constant:leftOffSet].active = YES;
+        [imageView.heightAnchor constraintEqualToAnchor:self.view.heightAnchor].active = YES;
         
         imageView.clipsToBounds = true;
-
         imageView.contentMode = UIViewContentModeScaleAspectFit;
-
     }
     
     self.pageControl.numberOfPages = self.photoArray.count;
-        
-    self.galleryScrollView.contentSize = CGSizeMake(self.view.frame.size.width * self.photoArray.count, self.view.frame.size.height);
-
 
 }
 
